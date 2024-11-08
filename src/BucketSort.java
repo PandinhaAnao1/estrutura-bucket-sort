@@ -77,7 +77,6 @@ public class BucketSort {
     }
 
     private void createEmptyBuckets(int manyBucket) {
-        System.out.println(max);
 
         for (int i = 1; i <= manyBucket; i++) {
             linkedList.add(new Bucket(((lengthBuckets*i)-(lengthBuckets)),  ((lengthBuckets*i)-1)));
@@ -85,18 +84,20 @@ public class BucketSort {
         }
 
     }
-
-    j
     public void sort() {
 
         for (int i = 0; i < listaDeElementos.size(); i++) {
-            System.out.println(listaDeElementos.get(i));
             for(Bucket bucket : linkedList){
+
+
+
 
                 if(listaDeElementos.get(i) <= bucket.max){
                     bucket.add(listaDeElementos.get(i));
                     listaDeElementos.remove(i);
+                    i = i-1;
                     break;
+
                 }
             }
         }

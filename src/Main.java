@@ -4,9 +4,13 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        List<Integer> randomList = Seed.getRnadomList(10, 1000, 0);
-        BucketSort bucketSort = new BucketSort(randomList,5);
+        List<Integer> randomList = Seed.getRnadomList(100000000, 100, 0);
+        long tempoInicio = System.nanoTime();
+        BucketSort bucketSort = new BucketSort(randomList);
         bucketSort.sort();
-        System.out.println(bucketSort.toString());
+        long tempoFim = System.nanoTime();
+        long tempoDecorrido = tempoFim - tempoInicio;
+        double tempoDecorridoSegundos = tempoDecorrido / 1.0e9;
+        System.out.println("Tempo gasto para ordenar: "+tempoDecorridoSegundos);
     }
 }
