@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 import java.lang.Integer;
@@ -84,14 +85,10 @@ public class BucketSort {
         }
 
     }
-    public void sort() {
+    public ArrayList<Integer> sort() {
 
         for (int i = 0; i < listaDeElementos.size(); i++) {
             for(Bucket bucket : linkedList){
-
-
-
-
                 if(listaDeElementos.get(i) <= bucket.max){
                     bucket.add(listaDeElementos.get(i));
                     listaDeElementos.remove(i);
@@ -101,7 +98,12 @@ public class BucketSort {
                 }
             }
         }
-
+        ArrayList<Integer> elemente = new ArrayList<Integer>();
+        for (Bucket bucket : linkedList){
+            Collections.sort(bucket.lista);
+            elemente.addAll(bucket.lista);
+        }
+        return elemente;
     }
 
     @Override

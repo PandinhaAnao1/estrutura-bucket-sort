@@ -23,13 +23,15 @@ public class Main {
         // Exibe o tempo decorrido em segundos
 
         long tempoInicio = System.nanoTime();
+        ArrayList<Integer> listaOrdenada;
         BucketSort bucketSort = new BucketSort(randomList);
-        bucketSort.sort();
+        listaOrdenada = bucketSort.sort();
         long tempoFim = System.nanoTime();
         long tempoDecorrido = tempoFim - tempoInicio;
         double tempoDecorridoSegundos = tempoDecorrido / 1.0e9;
         System.out.printf("Tempo de ordenação: %.4f segundos na lista\n", tempoDecorridoSegundosLISTA);
         System.out.println("Tempo gasto para ordenar no bucket: "+tempoDecorridoSegundos);
+        System.out.println(bucketSort);
 
     }
 }

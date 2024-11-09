@@ -3,7 +3,7 @@ import  java.util.List;
 import  java.lang.Integer;
 
 public class Bucket {
-    List<Integer> lista = new ArrayList<Integer>();
+    ArrayList<Integer> lista = new ArrayList<Integer>();
     int min;
     int max;
 
